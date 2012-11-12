@@ -9,9 +9,9 @@ class SortingAlgorithmTestCase(unittest.TestCase):
     """
 
     def setUp(self):
-        self.input = range(10)
+        self.input = list(range(10))
         random.shuffle(self.input)
-        self.correct = range(10)
+        self.correct = list(range(10))
 
 
 class TestBubbleSort(SortingAlgorithmTestCase):
@@ -55,8 +55,8 @@ class TestMergeSort(SortingAlgorithmTestCase):
         self.assertEqual(self.correct, self.output)
 
     def test_merge(self):
-        self.seq1 = range(0, 5)
-        self.seq2 = range(5, 10)
+        self.seq1 = list(range(0, 5))
+        self.seq2 = list(range(5, 10))
         self.seq = merge_sort.merge(self.seq1, self.seq2)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
